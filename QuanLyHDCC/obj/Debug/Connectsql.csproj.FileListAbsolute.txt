@@ -1,0 +1,7 @@
+C:\Connectsql\bin\Debug\Connectsql.exe.config
+C:\Connectsql\bin\Debug\Connectsql.exe
+C:\Connectsql\bin\Debug\Connectsql.pdb
+C:\Connectsql\obj\Debug\Connectsql.csproj.AssemblyReference.cache
+C:\Connectsql\obj\Debug\Connectsql.csproj.CoreCompileInputs.cache
+C:\Connectsql\obj\Debug\Connectsql.exe
+C:\Connectsql\obj\Debug\Connectsql.pdb

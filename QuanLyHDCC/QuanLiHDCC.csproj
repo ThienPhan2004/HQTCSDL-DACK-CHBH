@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{29A7699B-D321-4B32-8F59-6696D730309B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Connectsql</RootNamespace>
+    <AssemblyName>Connectsql</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ChiTietHDCC.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="FormAddCTHDCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddCTHDCC.Designer.cs">
+      <DependentUpon>FormAddCTHDCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddHDCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddHDCC.Designer.cs">
+      <DependentUpon>FormAddHDCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddSP.Designer.cs">
+      <DependentUpon>FormAddSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormChiTietHDCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChiTietHDCC.Designer.cs">
+      <DependentUpon>FormChiTietHDCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHopDongCungCap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHopDongCungCap.Designer.cs">
+      <DependentUpon>FormHopDongCungCap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSanPham.Designer.cs">
+      <DependentUpon>FormSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HopDongCungCap.cs" />
+    <Compile Include="Modify.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPham.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormAddCTHDCC.resx">
+      <DependentUpon>FormAddCTHDCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddHDCC.resx">
+      <DependentUpon>FormAddHDCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddSP.resx">
+      <DependentUpon>FormAddSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormChiTietHDCC.resx">
+      <DependentUpon>FormChiTietHDCC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHopDongCungCap.resx">
+      <DependentUpon>FormHopDongCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSanPham.resx">
+      <DependentUpon>FormSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

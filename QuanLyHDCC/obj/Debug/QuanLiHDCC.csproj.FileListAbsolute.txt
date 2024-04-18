@@ -1,0 +1,14 @@
+C:\Connectsql\obj\Debug\QuanLiHDCC.csproj.AssemblyReference.cache
+C:\Connectsql\obj\Debug\Connectsql.FormAddCTHDCC.resources
+C:\Connectsql\obj\Debug\Connectsql.FormChiTietHDCC.resources
+C:\Connectsql\obj\Debug\QuanLiHDCC.csproj.GenerateResource.cache
+C:\Connectsql\obj\Debug\QuanLiHDCC.csproj.CoreCompileInputs.cache
+C:\Connectsql\obj\Debug\Connectsql.exe
+C:\Connectsql\obj\Debug\Connectsql.pdb
+C:\Connectsql\bin\Debug\Connectsql.exe.config
+C:\Connectsql\bin\Debug\Connectsql.exe
+C:\Connectsql\bin\Debug\Connectsql.pdb
+C:\Connectsql\obj\Debug\Connectsql.FormSanPham.resources
+C:\Connectsql\obj\Debug\Connectsql.FormAddSP.resources
+C:\Connectsql\obj\Debug\Connectsql.FormAddHDCC.resources
+C:\Connectsql\obj\Debug\Connectsql.FormHopDongCungCap.resources
