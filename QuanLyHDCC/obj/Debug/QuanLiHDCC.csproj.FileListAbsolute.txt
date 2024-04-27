@@ -12,3 +12,17 @@ C:\Connectsql\obj\Debug\Connectsql.FormSanPham.resources
 C:\Connectsql\obj\Debug\Connectsql.FormAddSP.resources
 C:\Connectsql\obj\Debug\Connectsql.FormAddHDCC.resources
 C:\Connectsql\obj\Debug\Connectsql.FormHopDongCungCap.resources
+C:\quan_ly_HDCC\QuanLyHDCC\bin\Debug\Connectsql.exe.config
+C:\quan_ly_HDCC\QuanLyHDCC\bin\Debug\Connectsql.exe
+C:\quan_ly_HDCC\QuanLyHDCC\bin\Debug\Connectsql.pdb
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\QuanLiHDCC.csproj.AssemblyReference.cache
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormAddCTHDCC.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormAddHDCC.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormAddSP.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormChiTietHDCC.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormHopDongCungCap.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.FormSanPham.resources
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\QuanLiHDCC.csproj.GenerateResource.cache
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\QuanLiHDCC.csproj.CoreCompileInputs.cache
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.exe
+C:\quan_ly_HDCC\QuanLyHDCC\obj\Debug\Connectsql.pdb

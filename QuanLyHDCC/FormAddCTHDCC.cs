@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -52,7 +53,7 @@ namespace Connectsql
                 MessageBox.Show("Số lượng phải là một số nguyên.");
                 return; // Dừng lại nếu số lượng không hợp lệ
             }
-
+   
             int donGia;
             if (!int.TryParse(this.textBox4.Text, out donGia))
             {
@@ -60,11 +61,11 @@ namespace Connectsql
                 return; // Dừng lại nếu đơn giá không hợp lệ
             }
             string trangThai = this.textBox5.Text;
-            ChiTietHDCC chiTietHDCC = new ChiTietHDCC(maHDCC, maSanPham, soLuong, donGia, trangThai );
+            ChiTietHDCC chiTietHDCC = new ChiTietHDCC(maHDCC, maSanPham, soLuong, donGia, trangThai);
             Modify modify = new Modify();
-            modify.insert(chiTietHDCC);
+            modify.insertChiTietHDCC(chiTietHDCC);
             FormChiTietHDCC formChiTietHDCC = Application.OpenForms["FormChiTietHDCC"] as FormChiTietHDCC;
-            if (formChiTietHDCC != null)
+            if (formChiTietHDCC!= null)
             {
                 formChiTietHDCC.UpdateDataGridView();
             }
@@ -73,7 +74,6 @@ namespace Connectsql
                 MessageBox.Show("Form ChiTietHDCC không tìm thấy.");
             }
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();

@@ -8,17 +8,17 @@ namespace Connectsql
 {
     internal class HopDongCungCap
     {
-        private int _maHDCC;
+        private string _maHDCC;
         private DateTime _ngayThanhLapHD;
         private int _triGia;
-        private int _maNCC;
+        private string _maNCC;
         private string _trangThai;
 
         public HopDongCungCap()
         {
         }
 
-        public HopDongCungCap(int maHDCC, DateTime ngayThanhLapHD, int triGia, int maNCC, string trangThai)
+        public HopDongCungCap(string maHDCC, DateTime ngayThanhLapHD, int triGia, string maNCC, string trangThai)
         {
             MaHDCC = maHDCC;
             NgayThanhLapHD = ngayThanhLapHD;
@@ -27,10 +27,10 @@ namespace Connectsql
             TrangThai = trangThai;
         }
 
-        public int MaHDCC { get => _maHDCC; set => _maHDCC = value; }
+        public string MaHDCC { get => _maHDCC; set => _maHDCC = value; }
         public DateTime NgayThanhLapHD { get => _ngayThanhLapHD; set => _ngayThanhLapHD = value; }
         public int TriGia { get => _triGia; set => _triGia = value; }
-        public int MaNCC { get => _maNCC; set => _maNCC = value; }
+        public string MaNCC { get => _maNCC; set => _maNCC = value; }
         public string TrangThai { get => _trangThai; set => _trangThai = value; }
     
 }

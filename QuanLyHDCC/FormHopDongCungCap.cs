@@ -78,5 +78,9 @@ namespace Connectsql
             formSanPham.ShowDialog();
             this.Show();
         }
+        public void UpdateDataGridView()
+        {
+            dataGridView1.DataSource = modify.GetAllHopDongCungCap();
+        }
     }
 }

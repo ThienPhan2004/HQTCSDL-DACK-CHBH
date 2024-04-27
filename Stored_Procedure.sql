@@ -1,11 +1,11 @@
 ﻿CREATE PROCEDURE GetChitietHDCCByMa
-    @maHDCC varchar(50) = NULL,
-    @maSanPham varchar(50) = NULL
+    @maHDCC varchar(50) = NULL, -- tham số đầu vào được phép là null
+    @maSanPham varchar(50) = NULL 
 AS
 BEGIN
-    SET NOCOUNT ON;
+    SET NOCOUNT ON; -- tắt thông báo số hàng bị ảnh hưởng
 
-    IF @maHDCC IS NOT NULL
+    IF @maHDCC IS NOT NULL 
     BEGIN
         -- Truy vấn thông tin từ bảng CHITIETHDCC dựa trên mã HDCC
         SELECT *

@@ -57,7 +57,7 @@ namespace Connectsql
             return dataTable;
         }
 
-        public bool insert(ChiTietHDCC chiTietHDCC)
+        public bool insertChiTietHDCC(ChiTietHDCC chiTietHDCC)
          {
              SqlConnection sqlConnection = Connection.GetSqlConnection();
              string query = "insert into CHITIETHDCC values (@maHDCC,@maSanPham,@soLuong,@donGia,@trangThai) ";
@@ -138,6 +138,35 @@ namespace Connectsql
             return true;
         }
 
+        public bool InsertHDCC(HopDongCungCap hopDongCungCap)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "INSERT INTO HopDongCungCap (maHDCC, ngayThanhLapHD, triGia, maNCC, trangThai) VALUES (@maHDCC, @ngayThanhLapHD, @triGia, @maNCC, @trangThai)";
+
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@maHDCC", SqlDbType.NVarChar).Value = hopDongCungCap.MaHDCC;
+                sqlCommand.Parameters.Add("@ngayThanhLapHD", SqlDbType.DateTime).Value = hopDongCungCap.NgayThanhLapHD;
+                sqlCommand.Parameters.Add("@triGia", SqlDbType.NVarChar).Value = hopDongCungCap.TriGia;
+                sqlCommand.Parameters.Add("@maNCC", SqlDbType.Int).Value = hopDongCungCap.MaNCC;
+                sqlCommand.Parameters.Add("@trangThai", SqlDbType.NVarChar).Value = hopDongCungCap.TrangThai;
+               
+
+                sqlCommand.ExecuteNonQuery(); // Thực thi lệnh truy vấn
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return true;
+        }
         public bool updateSanPham(SanPham sanPham)
         {
             SqlConnection sqlConnection = Connection.GetSqlConnection();
@@ -171,7 +200,38 @@ namespace Connectsql
 
             return true;
         }
+        public bool updateHDCC(HopDongCungCap hopDongCungCap)
+        {
+            SqlConnection sqlConnection = Connection.GetSqlConnection();
+            string query = "UPDATE HOPDONGCUNGCAP " +
+               "SET maHDCC= @maHDCC, ngayThanhLapHD = @ngayThanhLapHD, " +
+               "triGia = @triGia, maNCC = @maNCC, trangThai = @trangThai" +
+               "WHERE maHDCC = @maHDCC";
 
+
+            try
+            {
+                sqlConnection.Open();
+                SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
+                sqlCommand.Parameters.Add("@maHDCC", SqlDbType.NVarChar).Value = hopDongCungCap.MaHDCC;
+                sqlCommand.Parameters.Add("@ngayThanhLapHD", SqlDbType.NVarChar).Value = hopDongCungCap.NgayThanhLapHD;
+                sqlCommand.Parameters.Add("@triGia", SqlDbType.Int).Value = hopDongCungCap.TriGia;
+                sqlCommand.Parameters.Add("@maNCC", SqlDbType.NVarChar).Value = hopDongCungCap.MaNCC;
+                sqlCommand.Parameters.Add("@trangThai", SqlDbType.Int).Value = hopDongCungCap.TrangThai;
+
+                sqlCommand.ExecuteNonQuery(); // Thực thi lệnh truy vấn
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                sqlConnection.Close();
+            }
+
+            return true;
+        }
         public bool delete(int maHDCC)
         {
             SqlConnection sqlConnection = Connection.GetSqlConnection();
@@ -209,18 +269,34 @@ namespace Connectsql
                     connection.Open();
 
                     // Gọi trigger tr_kiemtrasoluong
-                    using (SqlCommand command1 = new SqlCommand("INSERT INTO CHITIETHDCC (soLuong) VALUES (-1)", connection))
+                    using (SqlCommand command3 = new SqlCommand("INSERT INTO CHITIETHDCC (soLuong) VALUES (-10)", connection))
                     {
-                        command1.ExecuteNonQuery();
-                      //  MessageBox.Show("Lỗi: " + "Không thêm vào được", "Lỗi",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        try
+                        {
+                            command3.ExecuteNonQuery();
+                        }
+                        catch (SqlException ex)
+                        {
+                            // Xử lý lỗi từ trigger tr_kiemtrasoluong
+                            Console.WriteLine("Error from trigger tr_kiemtrasoluong: " + ex.Message);
+                        }
                     }
 
                     // Gọi trigger tr_kiemtradulieukhixoa
                     using (SqlCommand command2 = new SqlCommand("DELETE FROM HOPDONGCUNGCAP WHERE maHDCC = 'your_maHDCC_here'", connection))
                     {
-                        command2.ExecuteNonQuery();
+                        try
+                        {
+                            command2.ExecuteNonQuery();
+                        }
+                        catch (SqlException ex)
+                        {
+                            // Xử lý lỗi từ trigger tr_kiemtradulieukhixoa
+                            Console.WriteLine("Error from trigger tr_kiemtradulieukhixoa: " + ex.Message);
+                        }
                     }
 
+                    // Gọi trigger them vao bang san pham
                     using (SqlCommand command3 = new SqlCommand("INSERT INTO CHITIETHDCC (maSanPham, soLuong) VALUES ('your_maSanPham_here', 10)", connection))
                     {
                         command3.ExecuteNonQuery();
@@ -233,6 +309,8 @@ namespace Connectsql
                 Console.WriteLine($"Lỗi khi gọi trigger: {ex.Message}");
             }
         }
+
+        // goi thu tuc khi tim kiem 
         public DataTable GetChitietHDCCByMa(string maHDCC, string maSanPham)
         {
             DataTable dataTable = new DataTable();
@@ -260,6 +338,10 @@ namespace Connectsql
                 }
             }
             return dataTable;
+        }
+        private void dgv_SelectionChanged(object sender, EventArgs e)
+        {
+            
         }
 
 
